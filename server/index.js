@@ -18,6 +18,13 @@ app.post("/api/movies", createMovie);
 app.put("/api/movies/:id", updateMovie);
 app.delete("/api/movies/:id", deleteMovie);
 
+/*
+Create = post
+Read = get
+Update = put
+Delete = Delete 
+*/
+
 const SERVER_PORT = 4004;
 app.listen(SERVER_PORT, () => {
   console.log(`Docked at port ${SERVER_PORT}`);

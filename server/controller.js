@@ -17,6 +17,19 @@ module.exports = {
     globalID++;
   },
 
+  // createMovie: (req,res) => {
+  //   const {title, rating , imageURL} = res.query
+  //   let newMovie = {
+  //     title,
+  //     rating,
+  //     imageURL,
+  //     id: globalID
+  //   }
+  //   movies.push(newMovie)
+  //   res.status(200).send(movies)
+  //   globalId++
+  // }
+
   updateMovie: (req, res) => {
     let { id } = req.params;
     let { type } = req.body;
@@ -28,7 +41,7 @@ module.exports = {
     } else if (type === "plus") {
       movies[index].rating++;
       res.status(200).send(movies);
-    } else if (type === "minus" && movies[index].rating === 0) {
+    } else if (type === "minus" && movies[index].rating === 1) {
       res.status(400).send("Cannot go below 0");
     } else if (type === "minus") {
       movies[index].rating--;
